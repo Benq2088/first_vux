@@ -36,7 +36,7 @@ export default {
       },
       data () {
         return {
-          msg: 'ces wom saf'
+          msg: '测试父子组件数据传递'
         }
       }
     }
