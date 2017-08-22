@@ -5,7 +5,6 @@
     <div>
       <group>
       <cell is-link title="个人中心" link="/personCenter"></cell>
-      <cell is-link title="Switch icons" link="/component/tabbar-icon"></cell>
     </group>
     <div>{{datas}}</div>
     <child @get-data="getData"></child>
@@ -54,9 +53,6 @@ export default {
       showBack: 'true',
       title: '联系人'
     }
-  },
-  mounted () {
-    // this.$el.querySelector('.vux-header-title span').innerText = '联系人'
   }
 }
 </script>

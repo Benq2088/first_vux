@@ -70,9 +70,9 @@ export default {
         // 隐藏
         // this.$vux.toast.hide()
       } else if (str === 'ajax') {
-        AjaxPlugin.$http.post('http://10.16.68.181:8177/midd/orderSale/orderStatistics', {startTime: '2017/07/12', endTime: '2017/08/17'})
+        AjaxPlugin.$http.get('https://baijia.baidu.com/passport?_=1503401680948', {})
         .then((response) => {
-          console.log(response.data)
+          console.log(response)
         })
       } else if (str === 'confirm') {
         // 显示

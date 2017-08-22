@@ -116,7 +116,7 @@ export default {
     }
   },
   mounted () {
-    this.showLoading()
+    // this.showLoading()
   },
   methods: {
     goto () {
