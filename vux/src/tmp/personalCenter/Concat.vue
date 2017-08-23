@@ -3,19 +3,19 @@
   <x-header :left-options="{showBack: true}">我反馈的问题</x-header>
   <div class="mv-body">
     <tabbar>
-      <tabbar-item link="/personCenter/concat/all">
+      <tabbar-item selected :link="all">
         <img slot="icon" src="../../assets/demo/icon_nav_button.png">
         <span slot="label">全部</span>
       </tabbar-item>
-      <tabbar-item show-dot link="/personCenter/concat/handing">
+      <tabbar-item show-dot :link="handing">
         <img slot="icon" src="../../assets/demo/icon_nav_msg.png">
         <span slot="label">处理中</span>
       </tabbar-item>
-      <tabbar-item selected link="/personCenter/concat/judge">
+      <tabbar-item :link="judge">
         <img slot="icon" src="../../assets/demo/icon_nav_article.png">
         <span slot="label">待评价</span>
       </tabbar-item>
-      <tabbar-item badge="2" link="/personCenter/concat/judged">
+      <tabbar-item badge="2" :link="judged">
         <img slot="icon" src="../../assets/demo/icon_nav_cell.png">
         <span slot="label">已评价</span>
       </tabbar-item>
@@ -45,9 +45,14 @@ export default {
   },
   data () {
     return {
+      all: {path: '/personCenter/concat/all', replace: true},
+      handing: {path: '/personCenter/concat/handing', replace: true},
+      judge: {path: '/personCenter/concat/judge', replace: true},
+      judged: {path: '/personCenter/concat/judged', replace: true}
     }
   },
   mounted () {
+
   }
 }
 </script>

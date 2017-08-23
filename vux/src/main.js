@@ -75,6 +75,7 @@ const routes = [{
 },
 {
   path: '/personCenter/concat',
+  redirect: '/personCenter/concat',
   component: require('./tmp/PersonalCenter/Concat'),
   children: [
     {path: '/personCenter/concat/all', component: require('./tmp/PersonalCenter/concat/All')},
