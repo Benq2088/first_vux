@@ -75,7 +75,13 @@ const routes = [{
 },
 {
   path: '/personCenter/concat',
-  component: require('./tmp/PersonalCenter/Concat')
+  component: require('./tmp/PersonalCenter/Concat'),
+  children: [
+    {path: '/personCenter/concat/all', component: require('./tmp/PersonalCenter/concat/All')},
+    {path: '/personCenter/concat/judge', component: require('./tmp/PersonalCenter/concat/Judge')},
+    {path: '/personCenter/concat/judged', component: require('./tmp/PersonalCenter/concat/Judged')},
+    {path: '/personCenter/concat/handing', component: require('./tmp/PersonalCenter/concat/Handing')}
+  ]
 },
 /**
   * 发现
