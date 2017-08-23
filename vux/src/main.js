@@ -101,6 +101,10 @@ const routes = [{
 {
   path: '/me.purse/:id', // 参数传递，跟ionic类似,取时使用this.$route.params.id
   component: require('./tmp/me/Purse')
+},
+{
+  path: '/me.setting',
+  component: require('./tmp/me/Setting')
 }
 ]
 

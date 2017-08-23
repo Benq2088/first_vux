@@ -67,7 +67,7 @@
     </div>
     <div class="weui-media-box weui-media-box_small-appmsg vm-mp">
         <div class="weui-cells">
-          <a class="weui-cell weui-cell_access">
+          <a class="weui-cell weui-cell_access" href="/#me.setting">
             <div class="weui-cell__hd">
               <img src="../../static/img/icon.png" alt="" class="vm-ion">
             </div>
