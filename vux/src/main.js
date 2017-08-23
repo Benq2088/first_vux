@@ -40,7 +40,6 @@ store.registerModule('vux', {
 })
 Vue.use(vuexI18n.plugin, store)
 
-// plugins BusPlugin, DatetimePlugin, LocalePlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, WechatPlugin, AjaxPlugin, AppPlugin
 import { BusPlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, AjaxPlugin, AppPlugin } from 'vux'
 
 Vue.use(ToastPlugin)
@@ -56,32 +55,62 @@ if (process.env.platform === 'app') {
 
 const routes = [{
   path: '/', // 微信
-  component: require('./tmp/WeChat')
+  component: function (resolve) {
+    require(['./tmp/WeChat.vue'], resolve)
+  }
 },
 /**
   * 通讯录
   */
 {
   path: '/concat',
-  component: require('./tmp/Concat')
+  component: function (resolve) {
+    require(['./tmp/Concat.vue'], resolve)
+  }
 },
 {
   path: '/personCenter',
-  component: require('./tmp/PersonalCenter')
+  component: function (resolve) {
+    require(['./tmp/PersonalCenter.vue'], resolve)
+  }
 },
 {
   path: '/personCenter/acitivity',
-  component: require('./tmp/PersonalCenter/Acitivity')
+  component: function (resolve) {
+    require(['./tmp/PersonalCenter/Acitivity.vue'], resolve)
+  }
 },
 {
   path: '/personCenter/concat',
   redirect: '/personCenter/concat',
-  component: require('./tmp/PersonalCenter/Concat'),
+  component: function (resolve) {
+    require(['./tmp/PersonalCenter/Concat.vue'], resolve)
+  },
   children: [
-    {path: '/personCenter/concat/all', component: require('./tmp/PersonalCenter/concat/All')},
-    {path: '/personCenter/concat/judge', component: require('./tmp/PersonalCenter/concat/Judge')},
-    {path: '/personCenter/concat/judged', component: require('./tmp/PersonalCenter/concat/Judged')},
-    {path: '/personCenter/concat/handing', component: require('./tmp/PersonalCenter/concat/Handing')}
+    {
+      path: '/personCenter/concat/all',
+      component: function (resolve) {
+        require(['./tmp/PersonalCenter/concat/All.vue'], resolve)
+      }
+    },
+    {
+      path: '/personCenter/concat/judge',
+      component: function (resolve) {
+        require(['./tmp/PersonalCenter/concat/Judge.vue'], resolve)
+      }
+    },
+    {
+      path: '/personCenter/concat/judged',
+      component: function (resolve) {
+        require(['./tmp/PersonalCenter/concat/Judged.vue'], resolve)
+      }
+    },
+    {
+      path: '/personCenter/concat/handing',
+      component: function (resolve) {
+        require(['./tmp/PersonalCenter/concat/Handing.vue'], resolve)
+      }
+    }
   ]
 },
 /**
@@ -89,22 +118,30 @@ const routes = [{
   */
 {
   path: '/find',
-  component: require('./tmp/Find')
+  component: function (resolve) {
+    require(['./tmp/Find.vue'], resolve)
+  }
 },
  /**
   * 我
   */
 {
   path: '/me',
-  component: require('./tmp/Me')
+  component: function (resolve) {
+    require(['./tmp/Me.vue'], resolve)
+  }
 },
 {
   path: '/me.purse/:id', // 参数传递，跟ionic类似,取时使用this.$route.params.id
-  component: require('./tmp/me/Purse')
+  component: function (resolve) {
+    require(['./tmp/me/Purse.vue'], resolve)
+  }
 },
 {
   path: '/me.setting',
-  component: require('./tmp/me/Setting')
+  component: function (resolve) {
+    require(['./tmp/me/Setting.vue'], resolve)
+  }
 }
 ]
 

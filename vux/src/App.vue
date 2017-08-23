@@ -30,20 +30,6 @@ export default {
     }
   },
   methods: {
-    onShowModeChange (val) {
-      /** hide drawer before changing showMode **/
-      this.drawerVisibility = false
-      setTimeout(one => {
-        this.showModeValue = val
-      }, 400)
-    },
-    onPlacementChange (val) {
-      /** hide drawer before changing position **/
-      this.drawerVisibility = false
-      setTimeout(one => {
-        this.showPlacementValue = val
-      }, 400)
-    },
     onClickMore () {
       this.showMenu = true
     },

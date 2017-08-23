@@ -1,7 +1,7 @@
 var path = require('path')
 var utils = require('./utils')
 
-var projectRoot = path.resolve(__dirname, '../')
+// var projectRoot = path.resolve(__dirname, '../')
 const vuxLoader = require('vux-loader')
 
 var config = require('../config')
