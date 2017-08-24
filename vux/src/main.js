@@ -69,6 +69,12 @@ const routes = [{
   }
 },
 {
+  path: '/concat/tree',
+  component: function (resolve) {
+    require(['./tmp/concat/Tree.vue'], resolve)
+  }
+},
+{
   path: '/personCenter',
   component: function (resolve) {
     require(['./tmp/PersonalCenter.vue'], resolve)

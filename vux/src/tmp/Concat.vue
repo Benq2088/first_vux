@@ -5,6 +5,7 @@
     <div>
       <group>
       <cell is-link title="个人中心" link="/personCenter"></cell>
+      <cell is-link title="树状列表" link="/concat/tree"></cell>
     </group>
     <div>{{datas}}</div>
     <child @get-data="getData"></child>
