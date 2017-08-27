@@ -126,15 +126,10 @@ export default {
     XHeader
   },
   mounted () {
-    /* this.$el.querySelector('.treeTitle').event('click', function (event) {
-      console.log(this)
-      // $(this).next().toggle()
-      event.stopPropagation()
-      event.preventDefault()
-    }, false) */
   },
   methods: {
     initTree (obj, data) {
+      var self = this
       for (var i = 0; i < data.length; i++) {
         let item = data[i]
         var pElt = document.createElement('div')
@@ -142,6 +137,9 @@ export default {
         let treeTitle = document.createElement('div')
         treeTitle.className = 'treeTitle'
         treeTitle.innerText = item.name
+        treeTitle.onclick = function () {
+          self.getTreeChildClick(this)
+        }
         pElt.appendChild(treeTitle)
         let innerItem = item.children
         if (innerItem.length > 0) { // 有子节点
@@ -153,7 +151,18 @@ export default {
             let li = document.createElement('li')
             if (inner.children.length > 0) {
               li.className = 'hasChild'
-              li.innerHTML = '<div class="treeItem"><div class="treeTitle">' + inner.name + '</div><ul class="ul"></ul></div>'
+              let ti = document.createElement('div')
+              ti.className = 'treeItem'
+              let inTi = document.createElement('div')
+              inTi.className = 'treeTitle'
+              inTi.innerText = inner.name
+              inTi.onclick = function () {
+                self.getTreeChildClick(this)
+              }
+              ti.appendChild(inTi)
+              let iUl = document.createElement('ul')
+              ti.appendChild(iUl)
+              li.appendChild(ti)
               pElt.querySelector('.ul').appendChild(li)
               this.initTree(pElt.querySelector('.hasChild .treeItem ul'), inner.children)
             } else {
@@ -163,6 +172,13 @@ export default {
           }
         }
         obj.appendChild(pElt)
+      }
+    },
+    getTreeChildClick (obj) {
+      let nextUl = obj.parentNode.querySelector('ul')
+      if (nextUl) {
+        if (nextUl.style.display === 'none') nextUl.style.display = 'block'
+        else nextUl.style.display = 'none'
       }
     },
     getTreeData (treeData) {
