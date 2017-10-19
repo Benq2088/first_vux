@@ -1,11 +1,12 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: false}">联系人</x-header>
   <div class="mv-body-has-tabs">
     <div>
       <group>
       <cell is-link title="个人中心" link="/personCenter"></cell>
       <cell is-link title="树状列表" link="/concat/tree"></cell>
+        <cell is-link title="slot" link="/concat/slot"></cell>
     </group>
     <div>{{datas}}</div>
     <child @get-data="getData"></child>

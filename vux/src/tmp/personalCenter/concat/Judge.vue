@@ -1,5 +1,5 @@
 <template>
-<div class="mv-concat-tabbody">
+<div class="outPosition mv-concat-tabbody">
     <h1>judge</h1>
 </div>  
 </template>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: true}">我反馈的问题</x-header>
   <div class="mv-body">
     <tabbar>
@@ -24,9 +24,7 @@
   </div>
 </div>
 </template>
-<style>
 
-</style>
 <script>
 import {XHeader, Swiper, SwiperItem, Tabbar, TabbarItem} from 'vux'
 import Panel from '../../components/panel/index'

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: false}">发现</x-header>
   <div class="mv-body-has-tabs">
     <div class="weui-media-box weui-media-box_small-appmsg vm-mp">

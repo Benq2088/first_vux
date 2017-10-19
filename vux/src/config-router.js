@@ -26,6 +26,12 @@ export default new Router({
       }
     },
     {
+      path: '/concat/slot',
+      component: function (resolve) {
+        require(['./tmp/concat/Slot.vue'], resolve)
+      }
+    },
+    {
       path: '/personCenter',
       component: function (resolve) {
         require(['./tmp/PersonalCenter.vue'], resolve)

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: true}">我的活动</x-header>
   <div class="mv-body">
     <swiper :list="demo01_list" style="width:100%;margin:0 auto;" :aspect-ratio="400/1000" dots-position="right"></swiper>

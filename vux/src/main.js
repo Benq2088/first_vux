@@ -3,12 +3,12 @@ import FastClick from 'fastclick'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 import App from './App'
-import vuexI18n from 'vuex-i18n'
-import router from './config-router'
-
+// import vuexI18n from 'vuex-i18n'
+// import router from './config-router'
+import router from './router/index'
 let store = new Vuex.Store({
   modules: {
-    i18n: vuexI18n.store
+    // i18n: vuexI18n.store
   }
 })
 
@@ -35,7 +35,8 @@ store.registerModule('vux', {
     }
   }
 })
-Vue.use(vuexI18n.plugin, store)
+// Vue.use(vuexI18n.plugin, store)
+Vue.use(store)
 
 import { BusPlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, AjaxPlugin, AppPlugin } from 'vux'
 
@@ -49,8 +50,6 @@ Vue.use(ConfirmPlugin)
 if (process.env.platform === 'app') {
   Vue.use(AppPlugin, store)
 }
-
-
 
 FastClick.attach(document.body)
 

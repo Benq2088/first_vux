@@ -3,7 +3,6 @@
     <div v-transfer-dom>
       <loading v-model="isLoading"></loading>
     </div>
-    <!-- <router-view></router-view> -->
     <transition
       @after-enter="$vux.bus && $vux.bus.$emit('vux:after-view-enter')" 
       :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
@@ -33,10 +32,10 @@ export default {
     onClickMore () {
       this.showMenu = true
     },
-    changeLocale (locale) {
-      this.$i18n.set(locale)
-      this.$locale.set(locale)
-    },
+    // changeLocale (locale) {
+    //   this.$i18n.set(locale)
+    //   this.$locale.set(locale)
+    // },
     ...mapActions([
       'updateDemoPosition'
     ])
@@ -60,7 +59,7 @@ export default {
 <style lang="less">
 @import '~vux/src/styles/reset.less';
 @import './styles/common.less';
-/*
+
 .vux-pop-out-enter-active,
 .vux-pop-out-leave-active,
 .vux-pop-in-enter-active,
@@ -68,7 +67,7 @@ export default {
   will-change: transform;
   transition: all 500ms;
   // height: 100%;
-  top: 46px;
+  top: 0px;
   position: absolute;
   backface-visibility: hidden;
   perspective: 1000;
@@ -88,5 +87,5 @@ export default {
 .vux-pop-in-leave-active {
   opacity: 0;
   transform: translate3d(-100%, 0, 0);
-}*/
+}
 </style>

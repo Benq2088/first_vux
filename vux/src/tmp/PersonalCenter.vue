@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: true}">个人中心</x-header>
   <div class="mv-body">
     <div class="personalCenter-h">

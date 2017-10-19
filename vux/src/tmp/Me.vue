@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: false}">我</x-header>
   <div class="mv-body-has-tabs">
     <div v-transfer-dom>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="outPosition">
   <x-header :left-options="{showBack: true}">树状列表</x-header>
   <div class="mv-body">
     <div id="treeContainer" class="treeContainer"></div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="outPosition">
     <x-header :left-options="{showBack: false}">微信</x-header>
     <div class="mv-body-has-tabs">
       <panel header="最近聊天记录" :footer="footer" :list="list" :type="type"></panel>
